@@ -442,6 +442,11 @@ h2 {
   gap: 1.2rem;
 }
 
+.video-grid.single {
+  grid-template-columns: minmax(0, 820px);
+  justify-content: center;
+}
+
 .video-card {
   margin: 0;
 }
