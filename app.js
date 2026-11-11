@@ -28,6 +28,7 @@
   const scrolly = document.querySelector("[data-scrolly]");
   const steps = [...document.querySelectorAll(".step")];
   const caption = document.querySelector("[data-caption]");
+  const shots = [...document.querySelectorAll("[data-shot]")];
   const captions = {
     heritage: "Heritage fabric intact",
     threat: "Rail footprint overlaid",
@@ -39,6 +40,9 @@
     steps.forEach((el) => el.classList.toggle("is-active", el === step));
     if (scrolly) scrolly.dataset.mode = mode;
     if (caption) caption.textContent = captions[mode] || captions.heritage;
+    shots.forEach((img) => {
+      img.classList.toggle("is-active", img.dataset.shot === mode);
+    });
   };
 
   if (steps.length && "IntersectionObserver" in window) {
